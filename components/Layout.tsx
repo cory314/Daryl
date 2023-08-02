@@ -1,31 +1,20 @@
-import React, { ReactNode } from "react";
-import Head from "next/head";
+import Head from 'next/head';
 
-type Props = {
-  children?: ReactNode;
-  title?: string;
-};
+const Layout = props => {
+    return (
+        <div>
+            <Head>
+                <title>{props.pageTitle}</title>
+                <meta charSet='UFT-8' />
+                <meta name='viewport' content="width=device-width, initial-scale=1.0" />
+                <meta httpEquiv='X-UA-Compatible' content='ie=edge' />
+                <link ref="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+            </Head>
+            <div>
+                {props.children}
+            </div>
+        </div>
+    )
+}
 
-const Layout = ({ children, title = "This is the default title" }: Props) => (
-  <div className="relative min-h-screen flex flex-col justify-center items-center bg-hero bg-cover">
-    <Head>
-      <title>{title} | FNG Web Production</title>
-      <meta charSet="utf-8" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <meta
-        name="description"
-        content="Slioth - is a One Page Saas Lading Page build with Tailwind CSS and NextJs created by themeptation"
-      />
-      <meta property="og:title" content={`${title} | Themeptation`} />
-      <meta
-        property="og:description"
-        content="Slioth - is a One Page Saas Lading Page build with Tailwind CSS and NextJs created by themeptation"
-      />
-      <meta property="og:url" content="https://slioth.themepttation.net/" />
-      <meta property="og:type" content="website" />
-    </Head>
-    {children}
-  </div>
-);
-
-export default Layout;
+export default Layout

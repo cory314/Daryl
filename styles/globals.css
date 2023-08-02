@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.body {
+    background-color: aliceblue;
+}
+.section {
+    background-color: aliceblue;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  position: relative;
+}
+
+.logo-image {
+  width: 75px; /* Adjust the width as needed */
+  height: auto; /* This maintains the aspect ratio */
+}
+
+.larger-image {
+    width: 80%; /* Adjust the width as needed */
+    max-width: 100%; /* Ensure the image doesn't exceed its original dimensions */
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
